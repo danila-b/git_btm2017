@@ -15,4 +15,8 @@ def get_clients():
     pass
 
 def get_transactions():
-    pass
+    transactions_list = []
+    with open(transaction_filename,'r') as file:
+        for line in file:
+            transactions_list.append(line.split(" "))
+    return transactions_list
