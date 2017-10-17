@@ -12,11 +12,15 @@ def add_transaction(debtor, creditor, amount):
     	f.write(str(debtor) + ' ' + str(creditor) + ' ' + str(amount)+'\n')
         
 def get_clients():
-    pass
+    list_clients = []
+    with open(client_filename, 'r') as file:
+        for line in file:
+            list_clients.append(line.strip())
+    return list_clients
 
 def get_transactions():
     transactions_list = []
-    with open(transaction_filename,'r') as file:
+    with open(transaction_filename, 'r') as file:
         for line in file:
             transactions_list.append(line.split(" "))
     return transactions_list
