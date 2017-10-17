@@ -8,7 +8,8 @@ def add_client(client_name):
 		f.write(str(client_name)+"\n")
       
 def add_transaction(debtor, creditor, amount):
-    pass
+    with open(transaction_filename, 'a') as f:
+    	f.write(str(debtor) + ' ' + str(creditor) + ' ' + str(amount)+'\n')
         
 def get_clients():
     pass
