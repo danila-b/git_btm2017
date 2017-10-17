@@ -2,10 +2,14 @@ import file_manager as fM
 
 def say_hi"():
     print("Good Morning!")
-    pass
 
 def new_client():
-    pass
+	new_client = input("...New client name: ")
+    if not new_client in fM.get_clients():
+        fM.add_client(new_client)
+        print("Client added !")
+    else:
+        print("Client already exist !")
     
 def new_transaction():
     pass
